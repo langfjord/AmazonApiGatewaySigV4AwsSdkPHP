@@ -104,7 +104,7 @@ It is posible to do the process without a SDK but then the signature will need t
  - Description: Something probably went wrong on the server or Amazon side.
  - How to fix: Contact the administrator in charge of the api if you dont have access to debugging on the api side.
  
-  #### The request signature we calculated does not match the signature you provided...
+  #### `The request signature we calculated does not match the signature you provided...`
  - Description: If using the AWS SDK this usually means that your access_key and secret_key (not the token) is invalid. Non SDK users might get this for other reasons.
  - How to fix: Check access_key og secret_key.
  

@@ -4,7 +4,7 @@ This is a small sample application in php for fetching results from Amazon API G
 
 # Installation
 
-This installation guide has been testet on an Ubuntu server v16.04 with PHP running a standard LAMP (LinuxApacheMysqlPhp) configuration. LAMP is not required, only PHP.
+This installation guide has been testet on an Ubuntu server v14.04 with PHP running a standard LAMP (LinuxApacheMysqlPhp) configuration. Neighter Linux, Ubuntu or LAMP is required, only PHP. This script and the following installation guide is however only testet in this configuration. This guide should work on most linux configurations with PHP installed and an optional webserver installed for non-cli usage. Installation should have simular steps for most platforms including Windows and Mac's. 
 
 
 1. Install AWS SDK (we are using the composer method in this example. For other methods see the additional resources in the bottom of this file.)
@@ -22,14 +22,16 @@ This installation guide has been testet on an Ubuntu server v16.04 with PHP runn
 
 1. Edit the api.php file with your own values between the // EDIT START and // EDIT END line. Example:
 
-    // EDIT START
-    $access_key = 'MYACCESSKEYLS9B9AS';
-    $secret_key = 'MYSECRETKEYACj+H0Shhf/88d6D3aAdaf7C4SAC';
-    $xapikey    = 'MYAPITOKENKdJBGv7vXCK2gfsV7Sd8KCA3dn2dS';
-    $url        = 'https://MYAPI.execute-api.eu-west-1.amazonaws.com/MYSTAGE/MYRESOURCE';
-    $region     = 'eu-west-1';
-    $json       = '{"a":"4","b":"5","op":"+"}';
-    // EDIT END
+// EDIT START
+$access_key = 'MYACCESSKEYLS9B9AS';
+$secret_key = 'MYSECRETKEYACj+H0Shhf/88d6D3aAdaf7C4SAC';
+$xapikey    = 'MYAPITOKENKdJBGv7vXCK2gfsV7Sd8KCA3dn2dS';
+$url        = 'https://MYAPI.execute-api.eu-west-1.amazonaws.com/MYSTAGE/MYRESOURCE';
+$region     = 'eu-west-1';
+$json       = '{"a":"4","b":"5","op":"+"}';
+// EDIT END
+
+Please note that none of the url, keys or tokens in this example are valid.
 
 
 # Usage
@@ -62,11 +64,23 @@ https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-wit
 
 
 # A small test calculation function for Lambda and Node.js
-A small Node.js script that will return output on the json payload in the configuration example.
+A small Node.js script that will return output on the json payload in the configuration example. Note that we are using the POST example.
 
 https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-lambda.html
+
+
+# About Amazon Signature version 4
+
+https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
 
 
 # For AWS SDK's in other languages
 
 https://aws.amazon.com/tools/
+
+
+# Postman
+A nice app for testing API with Amazon Signature version 4 support.
+
+https://www.getpostman.com/
+

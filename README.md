@@ -23,12 +23,6 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar require aws/aws-sdk-php
 ```
 
-## Amazon API Gateway and Lambda example setup (optional)
-
-In this example we are using a small test calculation function for `Lambda` and `Node.js` behind `Amazon API Gateway`. This is a small Node.js script that will return output on the json payload in the configuration example we are using for the basic setup of this script. Note that we by default are using the `POST example` in this script. Edit the script to allow other methods.
-
-https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-lambda.html
-
 
 ## Configuration
 
@@ -43,7 +37,14 @@ $region     = 'eu-west-1';
 $json       = '{"a":"4","b":"5","op":"+"}';
 ```
 
-Please note that none of the url, keys or tokens in this example are valid.
+Please note that none of the url, keys or tokens in this example are valid. You need to change them! The json is valid for the optional example setup. 
+
+
+## Amazon API Gateway and Lambda example setup (optional)
+
+In the configuration example we are using a small test calculation function for `Lambda` and `Node.js` behind `Amazon API Gateway`. This is a small Node.js script that will return output on the json payload in the configuration example we are using for the basic setup of this script. Note that we by default are using the `POST example` in this script. Edit the script to allow other methods.
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-lambda.html
 
 
 ## Usage
@@ -58,6 +59,24 @@ php api.php
 ```
 //YOURSERVER/api.php
 ```
+
+
+## About the authentication process
+
+The script will create a new signingnature based on the info provided and make a POST request with json body and the required x-api-key and Content-Type headers for authentication by Amazon. If you are using the SDK, as in this example, the remaining dynamic X-Amz-Date and Authorization headers, required to do the signing/authentication, will be dynamicly, uniquely and automaticly created for each request. 
+
+The script will perform the following actions behind the scenes:
+
+- The api token `$xapikey` -> `will be passed to header`.
+
+- The Amazon Signature Version 4 Signing Process `$access_key` and `$secret_key` -> `will be used to create a unique signature passed to header`.
+
+If you create more then one api in Amazon API Gateway you might be in the situation that you have one IAM user that will be used for all or just one of the API's. On the other hand you might have one API token for each API. You might find that the compbination of API token and IAM key/secret might be different from different API's. Having the wrong combination might result in an error.
+
+
+## Non-SDK usage
+
+It is posible to do the process without a SDK but then the signature will need to be created manually.
 
 
 ## Error codes

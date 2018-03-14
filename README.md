@@ -13,13 +13,13 @@ This installation guide has been testet on an Ubuntu server v14.04 with PHP runn
 
  a. Install `Composer` from the root folder of this project.
 
-```
+```php
 curl -sS https://getcomposer.org/installer | php
 ```
   
  b. Run the Composer command to install the latest stable version of the `SDK`:
 
-```
+```php
 php composer.phar require aws/aws-sdk-php
 ```
 
@@ -28,7 +28,7 @@ php composer.phar require aws/aws-sdk-php
 
 1. Edit the `api.php` file with your own values between the `// EDIT START` and `// EDIT END` line. Example:
 
-```
+```php
 $access_key = 'MYACCESSKEYLS9B9AS';
 $secret_key = 'MYSECRETKEYACj+H0Shhf/88d6D3aAdaf7C4SAC';
 $xapikey    = 'MYAPITOKENKdJBGv7vXCK2gfsV7Sd8KCA3dn2dS';
@@ -42,7 +42,9 @@ Please note that none of the url, keys or tokens in this example are valid. You 
 
 ## Amazon API Gateway and Lambda example setup (optional)
 
-In the configuration example we are using a small test calculation function for `Lambda` and `Node.js` behind `Amazon API Gateway`. This is a small Node.js script that will return output on the json payload in the configuration example we are using for the basic setup of this script. Note that we by default are using the `POST example` in this script. Edit the script to allow other methods.
+*You might skip this if you already have a setup ready on Amazon API Gateway*
+
+In the configuration example we are using a small test calculation function for `Lambda` and `Node.js` behind `Amazon API Gateway`. This is a small Node.js script that will return output on the json payload in the configuration example we are using for the basic setup of this script. Note that we by default are using the `POST example` in this script. Edit the `api.php` file to allow other methods.
 
 https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-lambda.html
 
@@ -51,7 +53,7 @@ https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-wit
 
 1. From CLI in root folder
 
-```
+```php
 php api.php
 ```
     

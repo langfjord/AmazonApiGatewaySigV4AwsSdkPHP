@@ -24,6 +24,7 @@ php composer.phar require aws/aws-sdk-php
 ```
 
 *If you are missing some php packages, install them as promted during the composer installation. Then try b. again.*
+
 Example if you are missing ext-simplexml for php7.0 then try something like ```sudo apt-get install php7.0-xml```
 
 ## Configuration

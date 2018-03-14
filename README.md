@@ -1,12 +1,12 @@
 # AmazonApiGatewaySigV4AwsSdkPHP
 This is a small sample application in php for fetching results from Amazon API Gateway using the AWS SDK for PHP. This script uses Signature v4 authentication (IAM user) in combination with an api token from Amazon API gateway. In the default setup of this script, it uses a JSON payload as the body over the POST method and generates all the required headers.
 
-This guide was latest installed and tested by the author: `2018-03-13`
+This guide was latest installed and tested by the author: `2018-03-14`
 
 
 ## Installation
 
-This installation guide has been testet on an Ubuntu server v14.04 with PHP running a standard LAMP (LinuxApacheMysqlPhp) configuration. Neighter Linux, Ubuntu or LAMP is required, only `PHP`. This script and the following installation guide is however only testet in this configuration. This guide should work on most linux configurations with PHP installed and an optional webserver installed for non-cli usage. Installation should have simular steps for most platforms including Windows and Mac's. 
+This installation guide has been testet on an Ubuntu server v14.04 and v16.04 with PHP running a standard LAMP (LinuxApacheMysqlPhp) configuration. Neighter Linux, Ubuntu or LAMP is required, only `PHP`. This script and the following installation guide is however only testet in this configuration. This guide should work on most linux configurations with PHP installed and an optional webserver installed for non-cli usage. Installation should have simular steps for most platforms including Windows and Mac's. 
 
 
 1. Install `AWS SDK` (we are using the composer method in this example. For other methods see the additional resources in the bottom of this file.)
@@ -56,7 +56,7 @@ https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-wit
 
 1. From CLI in root folder
 
-```php
+```
 php api.php
 ```
     

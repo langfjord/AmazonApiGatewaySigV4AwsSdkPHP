@@ -23,6 +23,10 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar require aws/aws-sdk-php
 ```
 
+*If you are missing some php packages, install them as promted during the composer installation. Then try b. again. Example: *
+```
+sudo apt-get install php7.0-xml
+```
 
 ## Configuration
 

@@ -13,20 +13,18 @@ This installation guide has been testet on an Ubuntu server v14.04 with PHP runn
 
  a. Install `Composer` from the root folder of this project.
 
-```php
+```
 curl -sS https://getcomposer.org/installer | php
 ```
   
  b. Run the Composer command to install the latest stable version of the `SDK`:
 
-```php
+```
 php composer.phar require aws/aws-sdk-php
 ```
 
-*If you are missing some php packages, install them as promted during the composer installation. Then try b. again. Example*
-```
-sudo apt-get install php7.0-xml
-```
+*If you are missing some php packages, install them as promted during the composer installation. Then try b. again.*
+Example if you are missing ext-simplexml for php7.0 then try something like ```sudo apt-get install php7.0-xml```
 
 ## Configuration
 
